@@ -1,0 +1,93 @@
+openapi: 3.0.4
+info:
+  title: GDP Data
+  description: >-
+    Get GDP (Gross Domestic Product) data for any country including current
+    values and historical data going back to 1960.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.0
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+  - url: https://api.apiverve.com/
+paths:
+  /v1/gdp:
+    get:
+      summary: Get GDP Data
+      description: >-
+        Get GDP data for a specific country. Returns latest data by default, or
+        data for a specific year if specified.
+      operationId: gdp
+      parameters:
+        - name: country
+          in: query
+          schema:
+            type: string
+          required: true
+          description: ISO 2 or 3-letter country code (e.g., US, USA, GB, GBR)
+          example: US
+        - name: year
+          in: query
+          schema:
+            type: integer
+          required: false
+          description: >-
+            Specific year to retrieve data for (1960-present). Returns latest if
+            not specified.
+          example: 2023
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: object
+                    description: data
+              example:
+                status: ok
+                error: null
+                data:
+                  country: USA
+                  countryName: United States
+                  currency: USD
+                  year: 2023
+                  count: 1
+                  historical:
+                    - year: 2023
+                      gdp: 27360935000000
+                      gdpFormatted: $27.36 trillion
+                      gdpGrowth: 2.54
+                      gdpPerCapita: 81632
+                code: 200
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occurred, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+  - api_key: []
+sampleRequest:
+  country: US
+  from: 2018
+  to: 2023
