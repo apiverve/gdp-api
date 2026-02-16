@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/gdp",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Get GDP (Gross Domestic Product) data for any country including current values and historical data going back to 1960.",
   "main": "index.js",
   "types": "index.d.ts",
