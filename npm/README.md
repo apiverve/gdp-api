@@ -125,12 +125,16 @@ async function makeRequest() {
   "status": "ok",
   "error": null,
   "data": {
-    "country": "USA",
+    "country": "US",
     "countryName": "United States",
     "currency": "USD",
     "year": 2023,
+    "gdp": 27360935000000,
+    "gdpFormatted": "$27.36 trillion",
+    "gdpGrowth": 2.54,
+    "gdpPerCapita": 81632,
     "count": 1,
-    "historical": [
+    "years": [
       {
         "year": 2023,
         "gdp": 27360935000000,
