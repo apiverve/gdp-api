@@ -25,6 +25,9 @@ namespace APIVerve.API.GDPData
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -39,30 +42,54 @@ namespace APIVerve.API.GDPData
         public string Currency { get; set; }
 
         [JsonProperty("year")]
-        public long Year { get; set; }
-
-        [JsonProperty("count")]
-        public long Count { get; set; }
-
-        [JsonProperty("historical")]
-        public Historical[] Historical { get; set; }
-    }
-
-    public partial class Historical
-    {
-        [JsonProperty("year")]
-        public long Year { get; set; }
+        public long? Year { get; set; }
 
         [JsonProperty("gdp")]
-        public long Gdp { get; set; }
+        public long? Gdp { get; set; }
 
         [JsonProperty("gdpFormatted")]
         public string GdpFormatted { get; set; }
 
         [JsonProperty("gdpGrowth")]
-        public double GdpGrowth { get; set; }
+        public double? GdpGrowth { get; set; }
 
         [JsonProperty("gdpPerCapita")]
-        public long GdpPerCapita { get; set; }
+        public long? GdpPerCapita { get; set; }
+
+        [JsonProperty("count")]
+        public long? Count { get; set; }
+
+        [JsonProperty("years")]
+        public Year[] Years { get; set; }
+    }
+
+    public partial class Year
+    {
+        [JsonProperty("year")]
+        public long? YearYear { get; set; }
+
+        [JsonProperty("gdp")]
+        public long? Gdp { get; set; }
+
+        [JsonProperty("gdpFormatted")]
+        public string GdpFormatted { get; set; }
+
+        [JsonProperty("gdpGrowth")]
+        public double? GdpGrowth { get; set; }
+
+        [JsonProperty("gdpPerCapita")]
+        public long? GdpPerCapita { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
