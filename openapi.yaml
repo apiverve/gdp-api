@@ -18,7 +18,7 @@ servers:
 paths:
   /v1/gdp:
     get:
-      summary: Get GDP Data
+      summary: GDP Data
       description: >-
         Get GDP data for a specific country. Returns latest data by default, or
         data for a specific year if specified.
