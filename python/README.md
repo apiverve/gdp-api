@@ -3,11 +3,10 @@ GDP Data API
 
 Get GDP (Gross Domestic Product) data for any country including current values and historical data going back to 1960.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [GDP Data API](https://apiverve.com/marketplace/gdp?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-gdpdata.svg)](https://pypi.org/project/apiverve-gdpdata/)
+
+This is a Python wrapper for the [GDP Data API](https://apiverve.com/marketplace/gdp?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-gdpdata
 
 ## Configuration
 
-Before using the gdp API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the GDP Data API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -63,7 +62,7 @@ except Exception as e:
 
 ## Usage
 
-The GDP Data API documentation is found here: [https://docs.apiverve.com/ref/gdp](https://docs.apiverve.com/ref/gdp?utm_source=pypi&utm_medium=readme).
+The GDP Data API documentation is found here: [https://docs.apiverve.com/ref/gdp](https://docs.apiverve.com/ref/gdp?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -108,12 +107,16 @@ print(result)
   "status": "ok",
   "error": null,
   "data": {
-    "country": "USA",
+    "country": "US",
     "countryName": "United States",
     "currency": "USD",
     "year": 2023,
+    "gdp": 27360935000000,
+    "gdpFormatted": "$27.36 trillion",
+    "gdpGrowth": 2.54,
+    "gdpPerCapita": 81632,
     "count": 1,
-    "historical": [
+    "years": [
       {
         "year": 2023,
         "gdp": 27360935000000,
@@ -265,7 +268,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -276,12 +279,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
