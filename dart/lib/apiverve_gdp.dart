@@ -2,7 +2,7 @@
 ///
 /// Get GDP (Gross Domestic Product) data for any country including current values and historical data going back to 1960.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/gdp?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/gdp?utm_source=dart&utm_medium=referral&utm_content=readme
 library apiverve_gdp;
 
 export 'src/client.dart';

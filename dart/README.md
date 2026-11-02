@@ -5,7 +5,7 @@ Get GDP (Gross Domestic Product) data for any country including current values a
 [![pub package](https://img.shields.io/pub/v/apiverve_gdp.svg)](https://pub.dev/packages/apiverve_gdp)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This is the Dart/Flutter client for the [GDP Data API](https://apiverve.com/marketplace/gdp?utm_source=dart&utm_medium=readme).
+This is the Dart/Flutter client for the [GDP Data API](https://apiverve.com/marketplace/gdp?utm_source=dart&utm_medium=referral&utm_content=readme).
 
 ## Installation
 
@@ -13,7 +13,7 @@ Add this to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  apiverve_gdp: ^1.1.14
+  apiverve_gdp: ^1.2.4
 ```
 
 Then run:
@@ -53,12 +53,16 @@ void main() async {
   "status": "ok",
   "error": null,
   "data": {
-    "country": "USA",
+    "country": "US",
     "countryName": "United States",
     "currency": "USD",
     "year": 2023,
+    "gdp": 27360935000000,
+    "gdpFormatted": "$27.36 trillion",
+    "gdpGrowth": 2.54,
+    "gdpPerCapita": 81632,
     "count": 1,
-    "historical": [
+    "years": [
       {
         "year": 2023,
         "gdp": 27360935000000,
@@ -74,12 +78,12 @@ void main() async {
 
 ## API Reference
 
-- **API Home:** [GDP Data API](https://apiverve.com/marketplace/gdp?utm_source=dart&utm_medium=readme)
-- **Documentation:** [docs.apiverve.com/ref/gdp](https://docs.apiverve.com/ref/gdp?utm_source=dart&utm_medium=readme)
+- **API Home:** [GDP Data API](https://apiverve.com/marketplace/gdp?utm_source=dart&utm_medium=referral&utm_content=readme)
+- **Documentation:** [docs.apiverve.com/ref/gdp](https://docs.apiverve.com/ref/gdp?utm_source=dart&utm_medium=referral&utm_content=readme)
 
 ## Authentication
 
-All requests require an API key. Get yours at [apiverve.com](https://apiverve.com?utm_source=dart&utm_medium=readme).
+All requests require an API key. Get yours at [apiverve.com](https://apiverve.com?utm_source=dart&utm_medium=referral&utm_content=readme).
 
 ## License
 
@@ -87,4 +91,4 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-Built with Dart for [APIVerve](https://apiverve.com?utm_source=dart&utm_medium=readme)
+Built with Dart for [APIVerve](https://apiverve.com?utm_source=dart&utm_medium=referral&utm_content=readme)

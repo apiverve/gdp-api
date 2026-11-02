@@ -46,7 +46,7 @@ final _formatPatterns = {
 
 /// GDP Data API client.
 ///
-/// For more information, visit: https://apiverve.com/marketplace/gdp?utm_source=dart&utm_medium=readme
+/// For more information, visit: https://apiverve.com/marketplace/gdp?utm_source=dart&utm_medium=referral&utm_content=readme
 ///
 /// Parameters:
 /// * [country] (required) - ISO 2 or 3-letter country code (e.g., US, USA, GB, GBR) [minLength: 2, maxLength: 3]
