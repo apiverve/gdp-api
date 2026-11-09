@@ -1,10 +1,10 @@
 [project]
 name = "apiverve-gdpdata"
-version = "1.2.2"
+version = "1.2.5"
 authors = [
   { name="APIVerve", email="hello@apiverve.com" },
 ]
-description = "Get GDP (Gross Domestic Product) data for any country including current values and historical data going back to 1960."
+description = "Get GDP (Gross Domestic Product) data for any country including current values and historical data going back to 1960. With changes=true it also returns the direction against the previous year, and on paid plans the prior year's GDP, the dollar and percent change, whether real growth is accelerating or slowing, and 5- and 10-year compound annual growth."
 keywords = ["gdp api", "gross domestic product", "gdp by country", "economic data", "world bank data"]
 readme = "README.md"
 requires-python = ">=3.9"

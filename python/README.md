@@ -1,7 +1,7 @@
 GDP Data API
 ============
 
-Get GDP (Gross Domestic Product) data for any country including current values and historical data going back to 1960.
+Get GDP (Gross Domestic Product) data for any country including current values and historical data going back to 1960. With changes=true it also returns the direction against the previous year, and on paid plans the prior year's GDP, the dollar and percent change, whether real growth is accelerating or slowing, and 5- and 10-year compound annual growth.
 
 
 [![PyPI version](https://img.shields.io/pypi/v/apiverve-gdpdata.svg)](https://pypi.org/project/apiverve-gdpdata/)
@@ -45,7 +45,8 @@ api = GdpAPIClient("[YOUR_API_KEY]")
 
 query = {
     "country": "US",
-    "year": 2023
+    "year": 2023,
+    "changes": true
 }
 
 try:
@@ -86,7 +87,8 @@ Using the API client, you can perform requests to the API.
 ```python
 query = {
     "country": "US",
-    "year": 2023
+    "year": 2023,
+    "changes": true
 }
 ```
 
@@ -110,21 +112,32 @@ print(result)
     "country": "US",
     "countryName": "United States",
     "currency": "USD",
-    "year": 2023,
-    "gdp": 27360935000000,
-    "gdpFormatted": "$27.36 trillion",
-    "gdpGrowth": 2.54,
-    "gdpPerCapita": 81632,
+    "year": 2025,
+    "gdp": 30769700000000,
+    "gdpFormatted": "$30.77 trillion",
+    "gdpGrowth": 2.16,
+    "gdpPerCapita": 90027,
     "count": 1,
     "years": [
       {
-        "year": 2023,
-        "gdp": 27360935000000,
-        "gdpFormatted": "$27.36 trillion",
-        "gdpGrowth": 2.54,
-        "gdpPerCapita": 81632
+        "year": 2025,
+        "gdp": 30769700000000,
+        "gdpFormatted": "$30.77 trillion",
+        "gdpGrowth": 2.16,
+        "gdpPerCapita": 90027
       }
-    ]
+    ],
+    "previousYear": 2024,
+    "changeDirection": "up",
+    "previousGdp": 29298013000000,
+    "gdpChange": 1471687000000,
+    "gdpChangePercent": 5.02,
+    "previousGdpGrowth": 2.79,
+    "growthTrend": "slowing",
+    "gdpPerCapitaChangePercent": 4.48,
+    "gdpCagr5y": 7.56,
+    "gdpCagr10y": 5.34,
+    "averageGrowth5y": 3.31
   },
   "code": 200
 }
@@ -145,7 +158,8 @@ api = GdpAPIClient("[YOUR_API_KEY]")
 
 query = {
     "country": "US",
-    "year": 2023
+    "year": 2023,
+    "changes": true
 }
 
 try:
@@ -169,7 +183,8 @@ api = GdpAPIClient("[YOUR_API_KEY]")
 
 query = {
     "country": "US",
-    "year": 2023
+    "year": 2023,
+    "changes": true
 }
 
 try:
@@ -206,7 +221,8 @@ from apiverve_gdpdata.apiClient import GdpAPIClient, GdpAPIClientError
 
 query = {
     "country": "US",
-    "year": 2023
+    "year": 2023,
+    "changes": true
 }
 
 # Using context manager ensures proper cleanup
@@ -235,7 +251,8 @@ api = GdpAPIClient("[YOUR_API_KEY]", debug=True)
 
 query = {
     "country": "US",
-    "year": 2023
+    "year": 2023,
+    "changes": true
 }
 
 # Debug information will be printed to console
@@ -253,7 +270,8 @@ api = GdpAPIClient("[YOUR_API_KEY]")
 
 query = {
     "country": "US",
-    "year": 2023
+    "year": 2023,
+    "changes": true
 }
 
 try:

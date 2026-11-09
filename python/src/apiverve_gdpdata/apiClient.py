@@ -25,7 +25,8 @@ class GdpAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
         "country": {"type": "string", "required": True, "minLength": 2, "maxLength": 3},
-        "year": {"type": "integer", "required": False, "min": 1960, "max": 2030}
+        "year": {"type": "integer", "required": False, "min": 1960, "max": 2030},
+        "changes": {"type": "boolean", "required": False, "default": False}
     }
 
     # Format validation patterns
