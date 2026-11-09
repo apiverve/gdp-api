@@ -2,12 +2,12 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "apiverve_gdp"
-  spec.version       = "1.2.4"
+  spec.version       = "1.2.5"
   spec.authors       = ["APIVerve"]
   spec.email         = ["hello@apiverve.com"]
 
   spec.summary       = "GDP Data API - Ruby Client"
-  spec.description   = "Get GDP (Gross Domestic Product) data for any country including current values and historical data going back to 1960."
+  spec.description   = "Get GDP (Gross Domestic Product) data for any country including current values and historical data going back to 1960. With changes=true it also returns the direction against the previous year, and on paid plans the prior year's GDP, the dollar and percent change, whether real growth is accelerating or slowing, and 5- and 10-year compound annual growth."
   spec.homepage      = "https://apiverve.com/marketplace/gdp?utm_source=ruby&utm_medium=referral&utm_content=homepage"
   spec.license       = "MIT"
   spec.required_ruby_version = ">= 2.7.0"
