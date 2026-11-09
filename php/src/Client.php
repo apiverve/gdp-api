@@ -15,7 +15,7 @@ use APIVerve\Gdp\Exceptions\ValidationException;
  * @example Basic usage
  * ```php
  * $client = new Client('your_api_key');
- * $response = $client->execute(['country' => 'US', 'year' => 2023]);
+ * $response = $client->execute(['country' => 'US', 'year' => 2023, 'changes' => true]);
  * print_r($response);
  * ```
  *
@@ -35,7 +35,8 @@ class Client
      */
     private const VALIDATION_RULES = [
         'country' => ['type' => 'string', 'required' => true, 'minLength' => 2, 'maxLength' => 3],
-        'year' => ['type' => 'integer', 'required' => false, 'min' => 1960, 'max' => 2030]
+        'year' => ['type' => 'integer', 'required' => false, 'min' => 1960, 'max' => 2030],
+        'changes' => ['type' => 'boolean', 'required' => false]
     ];
 
     /**
