@@ -1,6 +1,6 @@
 # [GDP Data API](https://apiverve.com/marketplace/gdp?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Get GDP (Gross Domestic Product) data for any country including current values and historical data going back to 1960.
+Get GDP (Gross Domestic Product) data for any country including current values and historical data going back to 1960. With changes&#x3D;true it also returns the direction against the previous year, and on paid plans the prior year&#x27;s GDP, the dollar and percent change, whether real growth is accelerating or slowing, and 5- and 10-year compound annual growth.
 
 The GDP Data API provides a simple, reliable way to integrate gdp data functionality into your applications. Built for developers who need production-ready gdp data capabilities without the complexity of building from scratch.
 
@@ -31,7 +31,8 @@ The GDP Data API provides a simple, reliable way to integrate gdp data functiona
 async function callGDPDataAPI() {
     try {
         const params = new URLSearchParams({
-            country: 'US'
+            country: 'US',
+            changes: true
         });
 
         const response = await fetch(`https://api.apiverve.com/v1/gdp?${params}`, {
@@ -54,7 +55,7 @@ callGDPDataAPI();
 ### Using cURL
 
 ```bash
-curl -X GET "https://api.apiverve.com/v1/gdp?country=US" \
+curl -X GET "https://api.apiverve.com/v1/gdp?country=US&changes=true" \
   -H "x-api-key: YOUR_API_KEY_HERE"
 ```
 
@@ -214,21 +215,32 @@ A real response from the GDP Data API:
     "country": "US",
     "countryName": "United States",
     "currency": "USD",
-    "year": 2023,
-    "gdp": 27360935000000,
-    "gdpFormatted": "$27.36 trillion",
-    "gdpGrowth": 2.54,
-    "gdpPerCapita": 81632,
+    "year": 2025,
+    "gdp": 30769700000000,
+    "gdpFormatted": "$30.77 trillion",
+    "gdpGrowth": 2.16,
+    "gdpPerCapita": 90027,
     "count": 1,
     "years": [
       {
-        "year": 2023,
-        "gdp": 27360935000000,
-        "gdpFormatted": "$27.36 trillion",
-        "gdpGrowth": 2.54,
-        "gdpPerCapita": 81632
+        "year": 2025,
+        "gdp": 30769700000000,
+        "gdpFormatted": "$30.77 trillion",
+        "gdpGrowth": 2.16,
+        "gdpPerCapita": 90027
       }
-    ]
+    ],
+    "previousYear": 2024,
+    "changeDirection": "up",
+    "previousGdp": 29298013000000,
+    "gdpChange": 1471687000000,
+    "gdpChangePercent": 5.02,
+    "previousGdpGrowth": 2.79,
+    "growthTrend": "slowing",
+    "gdpPerCapitaChangePercent": 4.48,
+    "gdpCagr5y": 7.56,
+    "gdpCagr10y": 5.34,
+    "averageGrowth5y": 3.31
   },
   "code": 200
 }

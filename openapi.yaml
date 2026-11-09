@@ -3,7 +3,10 @@ info:
   title: GDP Data
   description: >-
     Get GDP (Gross Domestic Product) data for any country including current
-    values and historical data going back to 1960.
+    values and historical data going back to 1960. With changes=true it also
+    returns the direction against the previous year, and on paid plans the prior
+    year's GDP, the dollar and percent change, whether real growth is
+    accelerating or slowing, and 5- and 10-year compound annual growth.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -21,7 +24,9 @@ paths:
       summary: GDP Data
       description: >-
         Get GDP data for a specific country. Returns latest data by default, or
-        data for a specific year if specified.
+        data for a specific year if specified. With changes=true, adds the
+        year-over-year change, growth trend, 5-year average growth and 5- and
+        10-year compound annual growth.
       operationId: gdp
       parameters:
         - name: country
@@ -40,6 +45,16 @@ paths:
             Specific year to retrieve data for (1960-present). Returns latest if
             not specified.
           example: 2023
+        - name: changes
+          in: query
+          schema:
+            type: boolean
+          required: false
+          description: >-
+            Include the change against the previous year, the growth trend, the
+            5-year average growth rate and the 5- and 10-year compound annual
+            growth rates
+          example: true
       responses:
         '200':
           description: Successful Response
@@ -64,18 +79,29 @@ paths:
                   country: US
                   countryName: United States
                   currency: USD
-                  year: 2023
-                  gdp: 27360935000000
-                  gdpFormatted: $27.36 trillion
-                  gdpGrowth: 2.54
-                  gdpPerCapita: 81632
+                  year: 2025
+                  gdp: 30769700000000
+                  gdpFormatted: $30.77 trillion
+                  gdpGrowth: 2.16
+                  gdpPerCapita: 90027
                   count: 1
                   years:
-                    - year: 2023
-                      gdp: 27360935000000
-                      gdpFormatted: $27.36 trillion
-                      gdpGrowth: 2.54
-                      gdpPerCapita: 81632
+                    - year: 2025
+                      gdp: 30769700000000
+                      gdpFormatted: $30.77 trillion
+                      gdpGrowth: 2.16
+                      gdpPerCapita: 90027
+                  previousYear: 2024
+                  changeDirection: up
+                  previousGdp: 29298013000000
+                  gdpChange: 1471687000000
+                  gdpChangePercent: 5.02
+                  previousGdpGrowth: 2.79
+                  growthTrend: slowing
+                  gdpPerCapitaChangePercent: 4.48
+                  gdpCagr5y: 7.56
+                  gdpCagr10y: 5.34
+                  averageGrowth5y: 3.31
                 code: 200
         '401':
           description: Your request was not authorized, or your API Key was invalid
@@ -93,5 +119,4 @@ security:
   - api_key: []
 sampleRequest:
   country: US
-  from: 2018
-  to: 2023
+  changes: true
