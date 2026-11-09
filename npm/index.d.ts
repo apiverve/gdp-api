@@ -25,16 +25,27 @@ declare module '@apiverve/gdp' {
 
 
   interface GDPDataData {
-      country:      null | string;
-      countryName:  null | string;
-      currency:     null | string;
-      year:         number | null;
-      gdp:          number | null;
-      gdpFormatted: null | string;
-      gdpGrowth:    number | null;
-      gdpPerCapita: number | null;
-      count:        number | null;
-      years:        Year[];
+      country:                   null | string;
+      countryName:               null | string;
+      currency:                  null | string;
+      year:                      number | null;
+      gdp:                       number | null;
+      gdpFormatted:              null | string;
+      gdpGrowth:                 number | null;
+      gdpPerCapita:              number | null;
+      count:                     number | null;
+      years:                     Year[];
+      previousYear:              number | null;
+      changeDirection:           null | string;
+      previousGdp:               number | null;
+      gdpChange:                 number | null;
+      gdpChangePercent:          number | null;
+      previousGdpGrowth:         number | null;
+      growthTrend:               null | string;
+      gdpPerCapitaChangePercent: number | null;
+      gdpCagr5Y:                 number | null;
+      gdpCagr10Y:                number | null;
+      averageGrowth5Y:           number | null;
   }
   
   interface Year {
