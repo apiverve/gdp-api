@@ -61,6 +61,39 @@ namespace APIVerve.API.GDPData
 
         [JsonProperty("years")]
         public Year[] Years { get; set; }
+
+        [JsonProperty("previousYear")]
+        public long? PreviousYear { get; set; }
+
+        [JsonProperty("changeDirection")]
+        public string ChangeDirection { get; set; }
+
+        [JsonProperty("previousGdp")]
+        public long? PreviousGdp { get; set; }
+
+        [JsonProperty("gdpChange")]
+        public long? GdpChange { get; set; }
+
+        [JsonProperty("gdpChangePercent")]
+        public double? GdpChangePercent { get; set; }
+
+        [JsonProperty("previousGdpGrowth")]
+        public double? PreviousGdpGrowth { get; set; }
+
+        [JsonProperty("growthTrend")]
+        public string GrowthTrend { get; set; }
+
+        [JsonProperty("gdpPerCapitaChangePercent")]
+        public double? GdpPerCapitaChangePercent { get; set; }
+
+        [JsonProperty("gdpCagr5y")]
+        public double? GdpCagr5Y { get; set; }
+
+        [JsonProperty("gdpCagr10y")]
+        public double? GdpCagr10Y { get; set; }
+
+        [JsonProperty("averageGrowth5y")]
+        public double? AverageGrowth5Y { get; set; }
     }
 
     public partial class Year

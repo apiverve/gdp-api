@@ -21,5 +21,11 @@ namespace APIVerve.API.GDPData
         /// </summary>
         [JsonProperty("year")]
         public int? Year { get; set; }
+
+        /// <summary>
+        /// Include the change against the previous year, the growth trend, the 5-year average growth rate and the 5- and 10-year compound annual growth rates
+        /// </summary>
+        [JsonProperty("changes")]
+        public bool? Changes { get; set; }
     }
 }
