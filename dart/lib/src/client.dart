@@ -51,6 +51,7 @@ final _formatPatterns = {
 /// Parameters:
 /// * [country] (required) - ISO 2 or 3-letter country code (e.g., US, USA, GB, GBR) [minLength: 2, maxLength: 3]
 /// * [year] - Specific year to retrieve data for (1960-present). Returns latest if not specified. [min: 1960, max: 2030]
+/// * [changes] - Include the change against the previous year, the growth trend, the 5-year average growth rate and the 5- and 10-year compound annual growth rates
 class GdpClient {
   final String apiKey;
   final String baseUrl;
@@ -60,6 +61,7 @@ class GdpClient {
   static final Map<String, ValidationRule> _validationRules = <String, ValidationRule>{
     'country': ValidationRule(type: 'string', required: true, minLength: 2, maxLength: 3),
     'year': ValidationRule(type: 'integer', required: false, min: 1960, max: 2030),
+    'changes': ValidationRule(type: 'boolean', required: false),
   };
 
   GdpClient(this.apiKey, {

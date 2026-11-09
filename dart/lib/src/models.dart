@@ -66,6 +66,17 @@ class GdpData {
   num? gdpPerCapita;
   num? count;
   List<GdpDataYearsItem>? years;
+  num? previousYear;
+  String? changeDirection;
+  num? previousGdp;
+  num? gdpChange;
+  num? gdpChangePercent;
+  num? previousGdpGrowth;
+  String? growthTrend;
+  num? gdpPerCapitaChangePercent;
+  num? gdpCagr5y;
+  num? gdpCagr10y;
+  num? averageGrowth5y;
 
   GdpData({
     this.country,
@@ -78,6 +89,17 @@ class GdpData {
     this.gdpPerCapita,
     this.count,
     this.years,
+    this.previousYear,
+    this.changeDirection,
+    this.previousGdp,
+    this.gdpChange,
+    this.gdpChangePercent,
+    this.previousGdpGrowth,
+    this.growthTrend,
+    this.gdpPerCapitaChangePercent,
+    this.gdpCagr5y,
+    this.gdpCagr10y,
+    this.averageGrowth5y,
   });
 
   factory GdpData.fromJson(Map<String, dynamic> json) => GdpData(
@@ -91,6 +113,17 @@ class GdpData {
       gdpPerCapita: json['gdpPerCapita'],
       count: json['count'],
       years: (json['years'] as List?)?.map((e) => GdpDataYearsItem.fromJson(e)).toList(),
+      previousYear: json['previousYear'],
+      changeDirection: json['changeDirection'],
+      previousGdp: json['previousGdp'],
+      gdpChange: json['gdpChange'],
+      gdpChangePercent: json['gdpChangePercent'],
+      previousGdpGrowth: json['previousGdpGrowth'],
+      growthTrend: json['growthTrend'],
+      gdpPerCapitaChangePercent: json['gdpPerCapitaChangePercent'],
+      gdpCagr5y: json['gdpCagr5y'],
+      gdpCagr10y: json['gdpCagr10y'],
+      averageGrowth5y: json['averageGrowth5y'],
     );
 }
 
@@ -121,14 +154,17 @@ class GdpDataYearsItem {
 class GdpRequest {
   String country;
   int? year;
+  bool? changes;
 
   GdpRequest({
     required this.country,
     this.year,
+    this.changes,
   });
 
   Map<String, dynamic> toJson() => {
       'country': country,
       if (year != null) 'year': year,
+      if (changes != null) 'changes': changes,
     };
 }
